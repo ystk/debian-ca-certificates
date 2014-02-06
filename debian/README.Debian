@@ -4,10 +4,11 @@ The Debian Package “ca-certificates”
 This package includes PEM files of CA certificates to allow SSL-based
 applications to check for the authenticity of SSL connections.
 
-Please note that certificate authorities whose certificates are included
-in this package are not in any way audited for trustworthiness and RFC
-3647 compliance, and that full responsibility to assess them belongs to
-the local system administrator.
+Please note that Debian can neither confirm nor deny whether the
+certificate authorities whose certificates are included in this package
+have in any way been audited for trustworthiness or RFC 3647 compliance.
+Full responsibility to assess them belongs to the local system
+administrator.
 
 The CA certificates contained in this package are installed into
 “/usr/share/ca-certificates”.
@@ -31,6 +32,14 @@ the PEM files into “/usr/local/share/ca-certificates” as above and call
 
 How certificates will be accepted into the ca-certificates package
 ------------------------------------------------------------------
+
+**** Notice! ****
+ Option 1, listed below, is deprecated.  Please, see Debian bug report
+ #647848 for discussion on establishing a new Debian CA Certificate
+ Policy for CA inclusion, maintenance, and enforcement in Debian
+ ca-certificates.  Option 2, below, is the only current method.
+ - http://bugs.debian.org/647848
+*****************
 
  Option 1:
  - File a *GPG-signed* bug report against ca-certificates with

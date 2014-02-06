@@ -1,3 +1,84 @@
+ca-certificates (20130119) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.87
+    Certificates removed (-) (none added):
+    - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 19 Jan 2013 14:08:50 -0600
+
+ca-certificates (20121105) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.86
+    Certificates added (+) (none removed):
+    + "Actalis Authentication Root CA"
+    + "Trustis FPS Root CA"
+    + "StartCom Certification Authority" (renewal/rehash)
+    + "StartCom Certification Authority G2"
+    + "Buypass Class 2 Root CA"
+    + "Buypass Class 3 Root CA"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+    + "T-TeleSec GlobalRoot Class 3"
+    + "EE Certification Centre Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 05 Nov 2012 10:56:28 -0600
+
+ca-certificates (20120212) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.81
+    Certificates added (+) and removed (-):
+    + "Security Communication RootCA2"
+    + "EC-ACC"
+    + "Hellenic Academic and Research Institutions RootCA 2011"
+    - "Verisign Class 2 Public Primary Certification Authority"
+    - "Verisign Class 4 Public Primary Certification Authority - G2"
+    - "TC TrustCenter, Germany, Class 2 CA"
+    - "TC TrustCenter, Germany, Class 3 CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 12 Feb 2012 15:12:59 -0600
+
+ca-certificates (20111211) unstable; urgency=low
+
+  Remove French Government IGC/A CA certificates. The RSA certificate is
+    included in the Mozilla bundle and the DSA certificate is not in use.
+  Remove expired signet.pl CAs.
+  Remove expired brasil.gov.br CA.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 11 Dec 2011 19:05:32 -0600
+
+ca-certificates (20111025) unstable; urgency=low
+
+  Update mozilla/certdata.txt to latest (NSS branch version 1.64.2.13)
+    Certificates added (+) and removed (-):
+    + "AffirmTrust Commercial"
+    + "AffirmTrust Networking"
+    + "AffirmTrust Premium"
+    + "AffirmTrust Premium ECC"
+    + "A-Trust-nQual-03"
+    + "Certinomis - Autorité Racine"
+    + "Certum Trusted Network CA"
+    + "Go Daddy Root Certificate Authority - G2"
+    + "Root CA Generalitat Valenciana"
+    + "Starfield Root Certificate Authority - G2"
+    + "Starfield Services Root Certificate Authority - G2"
+    + "TWCA Root Certification Authority"
+    - "AOL Time Warner Root Certification Authority 1"
+    - "AOL Time Warner Root Certification Authority 2"
+    - "DigiNotar Root CA"
+    - "Entrust.net Global Secure Personal CA"
+    - "Entrust.net Global Secure Server CA"
+    - "Entrust.net Secure Personal CA"
+    - "IPS Chained CAs root"
+    - "IPS CLASE1 root"
+    - "IPS CLASE3 root"
+    - "IPS CLASEA1 root"
+    - "IPS CLASEA3 root"
+    - "IPS Timestamping root"
+    - "Thawte Personal Freemail CA"
+    - "Thawte Time Stamping CA"
+  Update CAcert-Class 3-Subroot-certificate  Closes: #630232
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Oct 2011 23:16:57 -0500
+
 ca-certificates (20090708) unstable; urgency=low
 
   * Removed CA files:

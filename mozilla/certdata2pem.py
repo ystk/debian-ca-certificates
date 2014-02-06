@@ -92,15 +92,18 @@ if os.path.exists('blacklist.txt'):
 # Build up trust database.
 trust = dict()
 for obj in objects:
-    if obj['CKA_CLASS'] != 'CKO_NETSCAPE_TRUST':
+    if obj['CKA_CLASS'] not in ('CKO_NETSCAPE_TRUST', 'CKO_NSS_TRUST'):
         continue
     if obj['CKA_LABEL'] in blacklist:
         print "Certificate %s blacklisted, ignoring." % obj['CKA_LABEL']
-    elif obj['CKA_TRUST_SERVER_AUTH'] == 'CKT_NETSCAPE_TRUSTED_DELEGATOR':
+    elif obj['CKA_TRUST_SERVER_AUTH'] in ('CKT_NETSCAPE_TRUSTED_DELEGATOR',
+                                          'CKT_NSS_TRUSTED_DELEGATOR'):
         trust[obj['CKA_LABEL']] = True
-    elif obj['CKA_TRUST_EMAIL_PROTECTION'] == 'CKT_NETSCAPE_TRUSTED_DELEGATOR':
+    elif obj['CKA_TRUST_EMAIL_PROTECTION'] in ('CKT_NETSCAPE_TRUSTED_DELEGATOR',
+                                               'CKT_NSS_TRUSTED_DELEGATOR'):
         trust[obj['CKA_LABEL']] = True
-    elif obj['CKA_TRUST_SERVER_AUTH'] == 'CKT_NETSCAPE_UNTRUSTED':
+    elif obj['CKA_TRUST_SERVER_AUTH'] in ('CKT_NETSCAPE_UNTRUSTED',
+                                          'CKT_NSS_NOT_TRUSTED'):
         print '!'*74
         print "UNTRUSTED BUT NOT BLACKLISTED CERTIFICATE FOUND: %s" % obj['CKA_LABEL']
         print '!'*74
@@ -118,6 +121,7 @@ for obj in objects:
                                       .replace('(', '=')\
                                       .replace(')', '=')\
                                       .replace(',', '_') + '.crt'
+        fname = fname.decode('string_escape')
         f = open(fname, 'w')
         f.write("-----BEGIN CERTIFICATE-----\n")
         f.write("\n".join(textwrap.wrap(base64.b64encode(obj['CKA_VALUE']), 64)))

@@ -1,14 +1,13 @@
 # Italian (it) translation of debconf templates for ca-certificates
-# Copyright (C) 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the ca-certificates package.
-# Luca Monducci <luca.mo@tiscali.it>, 2007.
+# Luca Monducci <luca.mo@tiscali.it>, 2007-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ca-certificates italian debconf templates\n"
+"Project-Id-Version: ca-certificates 20110502 italian debconf templates\n"
 "Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-16 17:02+0200\n"
-"PO-Revision-Date: 2007-07-28 20:50+0200\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-10-11 18:50+0200\n"
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -16,21 +15,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "Configurazione di ca-certificates"
+
 #. Type: select
 #. Choices
-#: ../templates:2001
-msgid "yes, no, ask"
-msgstr "sì, no, chiedi"
+#: ../templates:3001
+msgid "yes"
+msgstr "sì"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "no"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "chiedi"
 
 #. Type: select
 #. Description
-#: ../templates:2002
+#: ../templates:3002
 msgid "Trust new certificates from certificate authorities?"
 msgstr "Fiducia ai certificati delle nuove autorità di certificazione?"
 
 #. Type: select
 #. Description
-#: ../templates:2002
+#: ../templates:3002
 msgid ""
 "This package may install new CA (Certificate Authority) certificates when "
 "upgrading. You may want to check such new CA certificates and select only "
@@ -42,7 +59,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:2002
+#: ../templates:3002
 msgid ""
 " - yes: new CA certificates will be trusted and installed;\n"
 " - no : new CA certificates will not be installed by default;\n"
@@ -54,13 +71,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid "New certificates to activate:"
 msgstr "Nuovi certificati da attivare:"
 
 #. Type: multiselect
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
 "During upgrades, new certificates will be added. Please choose those you "
 "trust."
@@ -70,13 +87,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid "Certificates to activate:"
 msgstr "Certificati da attivare:"
 
 #. Type: multiselect
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid ""
 "This package installs common CA (Certificate Authority) certificates in /usr/"
 "share/ca-certificates."
@@ -86,7 +103,7 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid ""
 "Please select the certificate authorities you trust so that their "
 "certificates are installed into /etc/ssl/certs. They will be compiled into a "
@@ -95,6 +112,9 @@ msgstr ""
 "Selezionare le autorità di certificazione fidate così da installare i "
 "relativi certificati in /etc/ssl/certs. Questi vengono compilati in un unico "
 "file /etc/ssl/certs/ca-certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "sì, no, chiedi"
 
 #~ msgid "${new_crts}"
 #~ msgstr "${new_crts}"

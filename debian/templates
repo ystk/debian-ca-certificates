@@ -7,9 +7,13 @@
 # Even minor modifications require translation updates and such
 # changes should be coordinated with translators and reviewers.
 
+Template: ca-certificates/title
+Type: title
+_Description: ca-certificates configuration
+
 Template: ca-certificates/trust_new_crts
 Type: select
-_Choices: yes, no, ask
+__Choices: yes, no, ask
 Default: yes
 _Description: Trust new certificates from certificate authorities?
  This package may install new CA (Certificate Authority) certificates when
