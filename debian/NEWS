@@ -1,3 +1,75 @@
+ca-certificates (20140325) unstable; urgency=medium
+
+  Update mozilla/certdata.txt to version 1.97+revert_of_936304
+    Mozilla reverted the removal of 1024-bit root certificates for
+    Entrust.net, GTE CyberTrust, and ValiCert (RSA), but did not update the
+    version number in nssckbi.h.
+    Certificates added (+) (none removed):
+    + "Entrust.net Secure Server CA"
+    + "GTE CyberTrust Global Root"
+    + "RSA Root Certificate 1"
+    + "ValiCert Class 1 VA"
+    + "ValiCert Class 2 VA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 25 Mar 2014 13:28:19 -0500
+
+ca-certificates (20140223) unstable; urgency=medium
+
+  Debian will no longer ship cacert.org certificates.
+
+  Update mozilla/certdata.txt to version 1.97.
+    Certificates added (+), removed (-), and renamed (~):
+    + "ACCVRAIZ1"
+    + "Atos TrustedRoot 2011"
+    + "E-Tugra Certification Authority"
+    + "SG TRUST SERVICES RACINE"
+    + "T-TeleSec GlobalRoot Class 2"
+    + "TWCA Global Root CA"
+    + "TeliaSonera Root CA v1"
+    + "Verisign Class 3 Public Primary Certification Authority"
+    ~ "Verisign Class 3 Public Primary Certification Authority"_2
+      (both Verisign Class 3 CAs now included with duplicate CKA_LABEL fix)
+    - "Entrust.net Secure Server CA"
+    - "Firmaprofesional Root CA"
+    - "GTE CyberTrust Global Root"
+    - "RSA Root Certificate 1"
+    - "TDC OCES Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+    - "Wells Fargo Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Feb 2014 15:21:39 -0600
+
+ca-certificates (20130906) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.94
+    Certificates added (+) and removed (-):
+    + "CA Disig Root R1"
+    + "CA Disig Root R2"
+    + "China Internet Network Information Center EV Certificates Root"
+    + "D-TRUST Root Class 3 CA 2 2009"
+    + "D-TRUST Root Class 3 CA 2 EV 2009"
+    + "PSCProcert"
+    + "Swisscom Root CA 2"
+    + "Swisscom Root EV CA 2"
+    + "TURKTRUST Certificate Services Provider Root 2007"
+    - "Equifax Secure eBusiness CA 2"
+    - "TC TrustCenter Universal CA III"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Fri, 06 Sep 2013 11:31:06 -0500
+
+ca-certificates (20130610) unstable; urgency=low
+
+  CAcert root and class3 certificates are now installed as individual
+  files, no longer as the concatenation of the two. The certificates
+  are installed as cacert.org_root.crt and cacert.org_class3.crt for
+  ease of identification.
+
+  Remove obsolete debconf.org CA.
+  Remove obsolete SPI CA certificate expired in 2007.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 10 Jun 2013 19:57:05 +0200
+
 ca-certificates (20130119) unstable; urgency=low
 
   Update mozilla/certdata.txt to version 1.87
@@ -211,4 +283,3 @@ ca-certificates (20040808) unstable; urgency=low
    - debian.org: revoked due to crack incident.
 
  -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun,  8 Aug 2004 22:43:36 +0900
-

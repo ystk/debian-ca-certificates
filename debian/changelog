@@ -1,3 +1,102 @@
+ca-certificates (20140325) unstable; urgency=medium
+
+  * Update mozilla/certdata.txt to version 1.97+revert_of_936304
+    Mozilla reverted the removal of 1024-bit root certificates for
+    Entrust.net, GTE CyberTrust, and ValiCert (RSA), but did not update the
+    version number in nssckbi.h.
+    Certificates added (+) (none removed):
+    + "Entrust.net Secure Server CA"
+    + "GTE CyberTrust Global Root"
+    + "RSA Root Certificate 1"
+    + "ValiCert Class 1 VA"
+    + "ValiCert Class 2 VA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 25 Mar 2014 13:28:19 -0500
+
+ca-certificates (20140223) unstable; urgency=medium
+
+  * No longer ship cacert.org certificates.  Closes: #718434, LP: #1258286
+  * Fix certdata2pem.py for multiple CAs using the same CKA_LABEL.  Thanks
+    to Marc Deslauriers for the patch.  Closes: #683403, LP: #1031333
+  * Sort local CA certificates on update-ca-certificates runs.  Thanks to
+    Vaclav Ovsik for the suggestion and patch.  Closes: #727136
+  * Add trailing newline to certificate, if it is missing.  Closes: #635570
+  * Update mozilla/certdata.txt to version 1.97.
+    Certificates added (+), removed (-), and renamed (~):
+    + "ACCVRAIZ1"
+    + "Atos TrustedRoot 2011"
+    + "E-Tugra Certification Authority"
+    + "SG TRUST SERVICES RACINE"
+    + "T-TeleSec GlobalRoot Class 2"
+    + "TWCA Global Root CA"
+    + "TeliaSonera Root CA v1"
+    + "Verisign Class 3 Public Primary Certification Authority"
+    ~ "Verisign Class 3 Public Primary Certification Authority"_2
+      (both Verisign Class 3 CAs now included with duplicate CKA_LABEL fix)
+    - "Entrust.net Secure Server CA"
+    - "Firmaprofesional Root CA"
+    - "GTE CyberTrust Global Root"
+    - "RSA Root Certificate 1"
+    - "TDC OCES Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+    - "Wells Fargo Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Feb 2014 23:22:29 -0600
+
+ca-certificates (20130906) unstable; urgency=low
+
+  * Add ca-certificates-local source package example to documentation
+  * Update local certificate handling in README.Debian.
+    Closes: #718173, LP: #487845
+  * Update CA inclusion policy for ca-certificates in README.Debian. With
+    the exception of SPI and CAcert, only those CAs included in Mozilla's
+    trust store will be included in ca-certificates in Debian.
+    Closes: #647848, LP: #103074
+  * Clarify that not all software that uses SSL uses ca-certificates in
+    README.Debian.  Closes: #664769
+  * Add mozilla/nssckbi.h to source, since certdata.txt no longer contains
+    a version number.
+  * Update debian/copyright to "Copyright: Mozilla Contributors" for
+    mozilla/{certdata.txt,nssckbi.h}.
+  * Update mozilla/certdata.txt to version 1.94
+    Certificates added (+) and removed (-):
+    + "CA Disig Root R1"
+    + "CA Disig Root R2"
+    + "China Internet Network Information Center EV Certificates Root"
+    + "D-TRUST Root Class 3 CA 2 2009"
+    + "D-TRUST Root Class 3 CA 2 EV 2009"
+    + "PSCProcert"
+    + "Swisscom Root CA 2"
+    + "Swisscom Root EV CA 2"
+    + "TURKTRUST Certificate Services Provider Root 2007"
+    - "Equifax Secure eBusiness CA 2"
+    - "TC TrustCenter Universal CA III"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Fri, 06 Sep 2013 11:31:06 -0500
+
+ca-certificates (20130610) unstable; urgency=low
+
+  [ Michael Shuler ]
+  * Install CAcert root and class3 certificates individually, no longer
+    installing the concatenation of the two. The individual certificates
+    are installed as cacert.org_root.crt and cacert.org_class3.crt for ease
+    of identification. Additionally, this allows openssl maintainers to drop
+    a problematic patch to c_rehash for handling multi-certificate files.
+    (see #642314)  Closes: #692323
+  * Update Vcs-* fields for lintian vcs-field-not-canonical
+  * Update to machine-readable debian/copyright file v1.0
+
+  [ Thijs Kinkhorst ]
+  * Drop upgrading code for upgrades from Debian Etch and earlier. 
+  * Remove obsolete debconf.org CA certificate. DebConf now uses an
+    intermediate certificate signed by SPI. (Closes: #693405)
+  * Remove obsolete SPI CA certiticate.
+  * Update Standards-Version: 3.9.4 (no changes needed)
+  * Clean up man page (LP: #850997).
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 10 Jun 2013 19:52:15 +0200
+
 ca-certificates (20130119) unstable; urgency=low
 
   * Update mozilla/certdata.txt to version 1.87  Closes: #697366
